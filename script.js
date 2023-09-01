@@ -1,5 +1,5 @@
 // Display / UI
-import { createBoard } from './minesweeper.js';
+import { createBoard, markTile } from './minesweeper.js';
 
 const BOARD_SIZE = 10;
 const NUMBER_OF_MINES = 2;
@@ -17,7 +17,10 @@ board.forEach(row => {
         tile.element.addEventListener('click', () => {
 
         })
-        tile.element.addEventListener('contextmenu', e => e.preventDefault());
+        tile.element.addEventListener('contextmenu', e => {
+            e.preventDefault();
+            markTile(tile);
+        });
     });
 });
 boardElement.style.setProperty('--size', BOARD_SIZE)
