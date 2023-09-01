@@ -2,11 +2,13 @@
 import { createBoard } from './minesweeper.js';
 
 const BOARD_SIZE = 10;
-const NUMBER_OF_MINES = 2;
+const NUMBER_OF_MINES = 10;
 
 // populate the board with tiles/mines
 const board = createBoard(BOARD_SIZE, NUMBER_OF_MINES);
 const boardElement = document.querySelector('.board');
+console.log(board);
+
 
 board.forEach(row => {
     row.forEach(tile => {
